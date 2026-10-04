@@ -4,12 +4,16 @@ from tools import tools, handle_tool_calls
 from styles import CSS, JS, EXAMPLES
 from dotenv import load_dotenv
 import gradio as gr
+import os
 
 load_dotenv(override=True)
 
-MODEL_NAME = "gpt-5.4-mini"
+MODEL_NAME = "qwen2.5:7b"
 
-openai = OpenAI()
+openai = OpenAI (
+    api_key=os.getenv('OLLAMA_API_KEY'),
+    base_url=os.getenv('OLLAMA_BASE_URL')
+)
 
 system = [{"role": "system", "content": TWIN_SYSTEM_PROMPT}]
 
