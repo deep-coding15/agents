@@ -24,8 +24,8 @@ def send_email(subject, text_body, html_body):
         server.send_message(msg)
 
 
-pushover_user = os.getenv("PUSHOVER_USER")
-pushover_token = os.getenv("PUSHOVER_TOKEN")
+pushover_user = os.getenv("PUSH_OVER_USER_KEY")
+pushover_token = os.getenv("PUSH_OVER_APP_TOKEN")
 pushover_url = "https://api.pushover.net/1/messages.json"
 
 def push(message):
